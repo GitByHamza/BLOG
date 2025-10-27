@@ -5,6 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const blogRoutes = require("./Routes/blogRoutes");
+const userRoutes = require("./Routes/userRoutes");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ✅ Routes
 app.use("/api/blogs", blogRoutes);
+app.use("/api/users", userRoutes);
 
 // ✅ Home route
 app.get("/", (req, res) => {
